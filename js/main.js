@@ -2,18 +2,26 @@
 // Da lì parte un timer di 30 secondi. Dopo 30 secondi i numeri scompaiono e l’utente deve inserire, i numeri che ha visto precedentemente.
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
+// creazione variabile da per stampare su schermo i numeri randomici
+let numeri = document.querySelector(".box-numeri");
 
-
-
-
+// creazione variabile da collegare all'input
+let userGuess = document.getElementById("userchoice");
 
  // Ottenere il riferimento al bottone di inizio gioco
  const startGame = document.getElementById("inizia-gioco");
 
+
+ 
  // Aggiungere un gestore di eventi al clic del bottone di inizio gioco
 startGame.addEventListener("click", 
         function () {
-        alert("I numeri da ricordare sono: " +creazioneNumeri)
+        // stampa su schermo i numeri random creati
+        numeri.innerHTML = ("I numeri da ricordare sono: " +creazioneNumeri);
+        // cancella il contenuto dopo 30 secondi
+        setTimeout(function () {
+            nascondiNumeri();
+        }, 30000);
 });
 
 
@@ -48,7 +56,7 @@ function createRandomNumber(numMin, numMax) {
     return Math.floor(Math.random() * (numMax - numMin + 1 )) + numMin;
 }
 
-// funzione per timeout
-function nascondiNumeri(){
-
+// Funzione per nascondere i numeri
+function nascondiNumeri() {
+    numeri.innerHTML = "";
 }
