@@ -18,7 +18,16 @@ body{
 .box-container{
     width: 60%;
     border: 1px solid white;
-    height: 500px;
+    height: 600px;
+}
+
+.box-punteggio{
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    font-size: 30px;
+    padding-top: 4px;
+    text-align: center;
 }
 
 button{
@@ -29,13 +38,14 @@ button{
 }
 
 .box-numeri{
-    height: 400px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 40px;
     text-align: center;
+    background-color: #000;
 }
 
 input{
