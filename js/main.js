@@ -10,8 +10,17 @@ let numeri = document.querySelector(".box-numeri");
 // creazione variabile da collegare all'input
 let userGuess = document.getElementById("userchoice");
 
- // Ottenere il riferimento al bottone di inizio gioco
- const startGame = document.getElementById("inizia-gioco");
+// Ottenere il riferimento al bottone di inizio gioco
+const startGame = document.getElementById("inizia-gioco");
+
+// creare const per punteggio
+const score = document.getElementById("score");
+
+// creare variabile per chiedere i numeri all'utente
+let chiediNumeri;
+
+// creare variabile con valore iniziale 0
+let punteggio = 0;
 
 
  // Aggiungere un gestore di eventi al clic del bottone di inizio gioco
@@ -62,16 +71,6 @@ function createRandomNumber(numMin, numMax) {
 function nascondiNumeri() {
     numeri.innerHTML = "";
 }
-
-// creare const per punteggio
-const score = document.getElementById("score");
-
-
-// creare variabile per chiedere i numeri all'utente
-let chiediNumeri;
-
-// creare variabile con valore iniziale nullo
-let punteggio;
 
 // crezione funzione per chiedere all'utente i numeri 5 volte
 function inserisciNumeri (){
