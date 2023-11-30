@@ -8,7 +8,7 @@
 let numeri = document.querySelector(".box-numeri");
 
 // creazione variabile da collegare all'input
-let userGuess = document.getElementById("userchoice");
+// let userGuess = document.getElementById("userchoice");
 
 // Ottenere il riferimento al bottone di inizio gioco
 const startGame = document.getElementById("inizia-gioco");
@@ -17,7 +17,7 @@ const startGame = document.getElementById("inizia-gioco");
 const score = document.getElementById("score");
 
 // creare variabile per chiedere i numeri all'utente
-let chiediNumeri;
+let askNumber;
 
 // creare variabile con valore iniziale 0
 let punteggio = 0;
@@ -38,6 +38,7 @@ startGame.addEventListener("click",
 );
 
 
+
 let creazioneNumeri = createRandomNumbersForArray(1, 100);
 
 // // creare funzione per array di numeri casuali da 1 a 100
@@ -45,9 +46,9 @@ function createRandomNumbersForArray(numMin, numMax) {
 
     // creare array vuoto
     let arrayNumber = [];
-
+    
     // ciclo per creare 5 numeri casuali
-    for(let i = 0; i <= 5; i++) {
+    for(let i = 1; i <= 5; i++) {
 
         // creazione variabile da collegare a funzione creazione numero casuale
         let randomNumber = createRandomNumber(numMin, numMax);
@@ -57,6 +58,7 @@ function createRandomNumbersForArray(numMin, numMax) {
         // pusshare i numeri nell'array
         arrayNumber.push(randomNumber);
         }
+        console.log(arrayNumber);
     }
     // caricare nell'array vuoto i 5 numeri casuali
     return arrayNumber;
@@ -72,18 +74,22 @@ function nascondiNumeri() {
     numeri.innerHTML = "";
 }
 
-// crezione funzione per chiedere all'utente i numeri 5 volte
+// creare funzione per chiedere all'utente i 5 numeri 
 function inserisciNumeri (){
     for (let i = 0; i < 5; i++){
-        chiediNumeri = parseInt(prompt("inserisci i numeri che ti ricordi"));
-        if (creazioneNumeri.includes(chiediNumeri)) {
-            alert("bravo hai ottenuto un punto")
+        askNumber = parseInt(prompt("inserisci i numeri che ti ricordi"));
+        if (creazioneNumeri.includes(askNumber)) {
+            alert("BrAvOoOoO!!1!!11!!")
             punteggio += 1;
-            score.innerHTML = punteggio;
+            score.innerHTML = ("Punteggio: ") +punteggio;
             console.log(punteggio);
         } else {
             alert("Hai sbagliato")
             return
+        }
+
+        if (punteggio === 5) {
+            score.innerHTML = "Sei un Bomber"
         }
     }  
 }
